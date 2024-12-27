@@ -1,3 +1,7 @@
+// Base
+@use './base/reset';
+@use './base/typography';
+
 // Vendors
 @tailwind base;
 @tailwind components;
