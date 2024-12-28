@@ -2,7 +2,6 @@
     <div class="project">
         <h2>{{ name }}</h2>
         <p>{{ slug }}</p>
-        <p v-if="description">{{ description }}</p>
     </div>
 </template>
 

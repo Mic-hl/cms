@@ -33,6 +33,7 @@
 }
 
 .project-description {
+    color: variables.$color-text-secondary;
     margin-top: variables.$spacer-md;
 
     @media screen and (min-width: variables.$screen-lg) {

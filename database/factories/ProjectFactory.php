@@ -14,7 +14,7 @@ class ProjectFactory extends Factory
         return [
             'name' => $this->faker->company(),
             'slug' => Str::slug($this->faker->unique()->company()),
-            'description' => $this->faker->sentence(),
+            'description' => $this->faker->realText(673),
             'url' => $this->faker->url(),
             'user_id' => 1,
         ];
