@@ -1,9 +1,16 @@
+@use 'sass:color';
 @use './variables';
 
 // Add Background
-@mixin background() {
+@mixin background($hover: false) {
     background: variables.$color-background-element;
     border-radius: variables.$border-radius;
+
+    @if $hover {
+        &:hover {
+            background: color.scale(variables.$color-background-element, $lightness: -21%);
+        }
+    }
 }
 
 // Create Flexbox
