@@ -9,3 +9,33 @@
         padding: variables.$spacer-lg;
     }
 }
+
+.project-info {
+    display: flex;
+    flex-direction: column;
+    gap: variables.$spacer-xxs;
+
+    .project h2 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.75rem;
+    }
+    
+    .project-slug {
+        color: variables.$color-text-secondary;
+        display: block;
+    }
+    
+    .project-url {
+        color: variables.$color-text-link;
+        text-decoration: underline;
+    }
+}
+
+.project-description {
+    margin-top: variables.$spacer-md;
+
+    @media screen and (min-width: variables.$screen-lg) {
+        margin-top: variables.$spacer-lg;
+    }
+}

@@ -1,11 +1,8 @@
 <template>
     <div class="project">
-        <h2 class="text-xl font-bold">{{ name }}</h2>
-        <p class="text-gray-600">{{ slug }}</p>
-        <p v-if="description" class="text-gray-800">{{ description }}</p>
-        <a v-if="url" :href="url" target="_blank" class="text-blue-500 underline">
-            {{ url }}
-        </a>
+        <h2>{{ name }}</h2>
+        <p>{{ slug }}</p>
+        <p v-if="description">{{ description }}</p>
     </div>
 </template>
 

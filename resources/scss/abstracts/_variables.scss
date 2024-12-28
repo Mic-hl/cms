@@ -1,5 +1,7 @@
 // Colors
-$color-text: #e5e7eb;
+$color-text-primary: #e5e7eb;
+$color-text-secondary: #4b5563;
+$color-text-link: #3b82f6;
 $color-background-element: #1f2937;
 
 // Fonts
@@ -8,9 +10,13 @@ $font-family: Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji"
 // Units
 $border-radius: 0.5rem;
 
+$spacer-xxs: 0.125rem;
 $spacer-sm: 1rem;
 $spacer-md: 1.5rem;
 $spacer-lg: 2rem;
 $spacer-xl: 3rem;
 
+$content-width: 80rem;
+
+$screen-md: 640px;
 $screen-lg: 1024px;
