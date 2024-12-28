@@ -2,7 +2,7 @@
 @use '../abstracts/mixins';
 
 .project {
-    @include mixins.background(true);
+    @include mixins.background();
     padding: variables.$spacer-md;
 
     @media screen and (min-width: variables.$screen-lg) {

@@ -6,6 +6,10 @@ ul.projects-list {
     flex-wrap: wrap;
     gap: variables.$spacer-md;
 
+    .project {
+        @include mixins.background(true);
+    }
+
     @media screen and (min-width: variables.$screen-lg) {
         gap: variables.$spacer-lg;
     }
