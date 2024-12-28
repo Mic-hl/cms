@@ -18,7 +18,7 @@ defineProps(['projects']);
 
         <div class="content-wrapper">
             <ul class="projects-list">
-                <li v-for="project in projects" :key="project.id">
+                <li v-for="project in projects.data" :key="project.id">
                     <Link
                         :href="`projects/${project.id}`"
                         class="project-link"
@@ -32,6 +32,16 @@ defineProps(['projects']);
                     </Link>
                 </li>
             </ul>
+        </div>
+        <div v-if="projects.links" class="pagination">
+            <Link
+                v-for="(link, index) in projects.links"
+                :key="index"
+                :href="link.url || '#'"
+                v-html="link.label"
+                :class="{ 'pagination-link': true, 'active': link.active }"
+                :aria-disabled="!link.url"
+            ></Link>
         </div>
     </AppLayout>
 </template>

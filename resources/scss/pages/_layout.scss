@@ -1,6 +1,7 @@
 @use '../abstracts/variables';
 
-.content-wrapper {
+.content-wrapper,
+.pagination {
     padding-bottom: variables.$spacer-xl;
     padding-top: variables.$spacer-xl;
 
