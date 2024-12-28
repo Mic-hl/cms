@@ -1,0 +1,11 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.project {
+    @include mixins.background();
+    padding: variables.$spacer-md;
+
+    @media screen and (min-width: variables.$screen-lg) {
+        padding: variables.$spacer-lg;
+    }
+}

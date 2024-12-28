@@ -1,0 +1,12 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+ul.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: variables.$spacer-md;
+
+    @media screen and (min-width: variables.$screen-lg) {
+        gap: variables.$spacer-lg;
+    }
+}

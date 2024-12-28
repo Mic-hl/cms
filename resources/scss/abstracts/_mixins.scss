@@ -1,0 +1,14 @@
+@use './variables';
+
+// Add Background
+@mixin background() {
+    background: variables.$color-background-element;
+    border-radius: variables.$border-radius;
+}
+
+// Create Flexbox
+@mixin flex() {
+    display: flex;
+    flex-wrap: wrap;
+    gap: variables.$spacer-md;
+}

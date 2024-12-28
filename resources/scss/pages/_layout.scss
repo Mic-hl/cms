@@ -1,0 +1,6 @@
+@use '../abstracts/variables';
+
+.content-wrapper {
+    padding-bottom: variables.$spacer-xl;
+    padding-top: variables.$spacer-xl;
+}
