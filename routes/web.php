@@ -26,7 +26,6 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard', [
             'user' => auth()->user(),
-            'roles' => auth()->user() ? auth()->user()->roles->pluck('name')->toArray() : [],
         ]);
     })->name('dashboard');
 

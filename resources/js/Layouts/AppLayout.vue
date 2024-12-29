@@ -8,6 +8,9 @@ import DropdownLink from '@/Components/DropdownLink.vue';
 import NavLink from '@/Components/NavLink.vue';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 
+// Debugging
+import { usePage} from '@inertiajs/vue3';
+
 defineProps({
     title: String,
 });
@@ -25,6 +28,12 @@ const switchToTeam = (team) => {
 const logout = () => {
     router.post(route('logout'));
 };
+
+// Debugging
+const { auth } = usePage().props;
+console.log(auth);
+console.log(auth.user);
+console.log(auth.user.roles);
 </script>
 
 <template>
@@ -51,10 +60,13 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <div v-if="$page.props.auth.user.roles && $page.props.auth.user.roles[0].name.includes('admin')" class="admin-panel">
+                                <div v-if="$page.props.auth.user && $page.props.auth.user.roles && $page.props.auth.user.roles.includes('admin')" class="admin-panel">
                                     <NavLink :href="route('projects.index')" :active="route().current('projects.index')">
                                         Projects
                                     </NavLink>
+                                </div>
+                                <div class="admin-panel">
+                                    {{ $page.props.auth.user.roles }}
                                 </div>
                             </div>
                         </div>

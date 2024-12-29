@@ -21,13 +21,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Inertia::share([
-            'auth' => function () {
+            'auth' => function(): array {
                 $user = auth()->user();
 
                 return [
                     'user' => $user ? $user->only(['id', 'name', 'email']) : null,
-                    // Extract role names as an array of strings
-                    'roles' => $user ? $user->roles->pluck('name')->toArray() : [],
+                    'roles' => $user ? $user->roles->pluck('name')->toArray(): [],
                 ];
             },
         ]);
