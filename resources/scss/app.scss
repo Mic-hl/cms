@@ -3,6 +3,8 @@
 @use './base/typography';
 
 // Components
+@use './components/header';
+@use './components/navigation';
 @use './components/pagination';
 @use './components/project';
 
@@ -17,4 +19,8 @@
 
 [x-cloak] {
     display: none;
+}
+
+.test {
+    background: red;
 }

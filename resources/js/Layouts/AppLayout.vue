@@ -51,9 +51,11 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('projects.index')" :active="route().current('projects.index')">
-                                    Projects
-                                </NavLink>
+                                <div v-if="$page.props.auth.user.roles[0].name.includes('admin')" class="admin-panel">
+                                    <NavLink :href="route('projects.index')" :active="route().current('projects.index')">
+                                        Projects
+                                    </NavLink>
+                                </div>
                             </div>
                         </div>
 

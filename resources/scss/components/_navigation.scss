@@ -1,0 +1,7 @@
+@use '../abstracts/variables';
+
+.admin-panel {
+    > * {
+        height: 100%;
+    }
+}

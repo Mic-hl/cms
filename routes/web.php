@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProjectController;
+use App\Http\Middleware\RoleMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -19,9 +20,18 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
+    // Create dashboard route
+    // Pass the user information as well as the role to the route
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        return Inertia::render('Dashboard', [
+            'user' => auth()->user(),
+            'roles' => auth()->user() ? auth()->user()->roles->pluck('name')->toArray() : [],
+        ]);
     })->name('dashboard');
 
-    Route::resource('/projects',ProjectController::class);
+    // Create project routes using the ProjectController as a ResourceController
+    // Use RoleMiddleware and restrict the access to admins
+    Route::resource('/projects',ProjectController::class)
+        ->middleware(RoleMiddleware::class . ':admin');
 });
